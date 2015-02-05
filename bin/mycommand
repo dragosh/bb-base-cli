@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var path = require('path');
+var ronin = require('ronin');
+var program = ronin(path.resolve(__dirname, '..')); // root path, where commands folder is
+// program.set({
+//     path: __dirname,
+//     delimiter: ':'
+// });
+program.run();
