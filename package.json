@@ -1,38 +1,33 @@
 {
-  "name": "npm-cli-boilerplate",
-  "description": "Create easy cli node packages",
-  "version": "0.0.1",
-  "homepage": "http://github.com/dragosh/npm-cli-boilerplate",
-  "repository": "git://github.com/GITUSERNAME/npm-cli-boilerplate.git",
+  "name": "bb-base-cli",
+  "description": "",
+  "version": "0.0.1-alpha-1",
+  "homepage": "https://github.com/dragosh/bb-base-cli",
+  "repository": "git://github.com/dragosh/bb-base-cli.git",
   "author": "Dragosh Oancea oancea.dragosh@gmail.com (http://dragos.me/)",
   "dependencies": {
-    "ronin": "^0.2.0"
-  },
-  "bin": {
-    "mycommand": "bin/mycommand"
+    "cliparse": "^0.2.1",
+    "lodash": "^3.7.0"
   },
   "devDependencies": {
     "coveralls": "^2.6.1",
     "del": "^1.1.1",
-    "eslint": "^0.13.0",
+    "eslint": "^0.20.0",
+    "expect.js": "^0.3.1",
     "istanbul": "^0.2.3",
     "mocha": "^1.17.0",
-    "mocha-lcov-reporter": "^0.0.1",
-    "should": "^4.0.0"
+    "mocha-lcov-reporter": "^0.0.1"
   },
   "main": "./index.js",
   "scripts": {
     "lint": "eslint . ",
+    "start": "nodemon --watch ./",
+    "test:watch": "npm run-script lint && mocha -w --reporter spec",
     "test": "npm run-script lint && mocha --reporter spec",
     "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "engines": {
     "node": ">= 0.10"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/dragosh/npm-cli-boilerplate/raw/master/LICENSE"
-    }
-  ]
+  "licenses": []
 }

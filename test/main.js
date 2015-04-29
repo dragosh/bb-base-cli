@@ -1,15 +1,28 @@
-// 'use strict';
+'use strict';
 
-// var should = require('should');
-// var APPNAME = require('../');
+require('mocha');
+var expect = require('expect.js');
+var base = require('../');
+var CLI = require('../lib/cli');
 
-// require('mocha');
+describe('Base-CLI api', function() {
+    describe('createCli', function() {
+        var myCli;
+        it('should be a function', function() {
+            expect(base.createCli).to.be.a(Function);
+        });
+        it('should create an instance of CLI', function() {
+            myCli = base.createCli('mycli');
+            expect(myCli).to.be.a(CLI);
+        });
+        it('should have the correct name', function() {
+            expect(myCli.name).to.be('mycli');
+        });
+    });
 
-// describe('APPNAME', function() {
-//     describe('FUNCTIONNAME()', function() {
-//         it('should TASKNAME', function(done) {
-//             should.exist(APPNAME);
-//             done();
-//         });
-//     });
-// });
+    describe('createCmd', function() {
+        it('should be a function', function() {
+            expect(base.createCmd).to.be.a(Function);
+        });
+    });
+});

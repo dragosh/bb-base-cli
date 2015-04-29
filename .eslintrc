@@ -1,10 +1,10 @@
 {
     "settings": {
-        "ecmascript": 6,
-        "jsx": true
+        "ecmascript": 6
     },
     "env": {
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "rules": {
         "valid-jsdoc": 0,
